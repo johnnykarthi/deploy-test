@@ -9,7 +9,7 @@ export default function About() {
       <meta property='og:title' content='About Component'/>
       <meta property='og:description' content='About Component Description'/>
       <meta property='og:url' content={window.location.href}/>
-      <meta property='og:image' content='/asset/about.jpg'/>
+      <meta property='og:image' content='https://deploytest-frontend.netlify.app//asset/about.jpg'/>
     </Helmet>
         <h2>About Page</h2>
     </div>

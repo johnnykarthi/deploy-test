@@ -9,7 +9,7 @@ export default function Home() {
       <meta property='og:title' content='Home Component'/>
       <meta property='og:description' content='Home Component Description'/>
       <meta property='og:url' content={window.location.href}/>
-      <meta property='og:image' content='/asset/home.jpg'/>
+      <meta property='og:image' content='https://deploytest-frontend.netlify.app//asset/home.jpg'/>
     </Helmet>
         <h2>Home Page</h2>
     </>

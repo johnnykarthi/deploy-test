@@ -9,7 +9,7 @@ export default function Profile() {
       <meta property='og:title' content='Profile Component'/>
       <meta property='og:description' content='Profile Component Description'/>
       <meta property='og:url' content={window.location.href}/>
-      <meta property='og:image' content='/asset/profile.png'/>
+      <meta property='og:image' content='https://deploytest-frontend.netlify.app//asset/profile.png'/>
     </Helmet>
     <div>Profile</div>
     <img src="/asset/profile-img.jpg" alt="profile" />
