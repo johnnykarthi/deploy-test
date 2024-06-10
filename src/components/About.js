@@ -1,31 +1,33 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Helmet } from 'react-helmet'
 
 export default function About() {
+  const setMetaTags = (tags) => {
+    Object.keys(tags).forEach(key => {
+      let metaTag = document.querySelector(`meta[property='${key}']`);
+      if (!metaTag) {
+        metaTag = document.createElement('meta');
+        metaTag.setAttribute('property', key);
+        document.head.appendChild(metaTag);
+      }
+      metaTag.setAttribute('content', tags[key]);
+    });
+  };
+
+  useEffect(() => {
+    const metaTags = {
+      'og:title': 'Nature save worlds',
+      'og:description': 'Nature is a British weekly scientific journal founded and based in London, England. As a multidisciplinary publication, Nature features peer-reviewed research from a variety of academic disciplines, mainly in science and technology.',
+      'og:image': 'https://jaykay-portfolio-v2.netlify.app/img/cover-pic.jpg',
+      'og:url': `https://deploytest-frontend.netlify.app/login`,
+      'og:type': 'website'
+    };
+
+    setMetaTags(metaTags);
+  }, []);
   return (
     <div>
-       <Helmet>
-                <title>Nature save worlds</title>
-                <meta name="title" content="Nature save worlds" />
-                <meta name="description"
-                    content="Nature is a British weekly scientific journal founded and based in London, England. As a multidisciplinary publication, Nature features peer-reviewed research from a variety of academic disciplines, mainly in science and technology." />
-
-
-                <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://jaykay-portfolio-v2.netlify.app/" />
-                <meta property="og:title" content="Nature save worlds" />
-                <meta property="og:description"
-                    content="Nature is a British weekly scientific journal founded and based in London, England. As a multidisciplinary publication, Nature features peer-reviewed research from a variety of academic disciplines, mainly in science and technology." />
-                <meta property="og:image" content="https://jaykay-portfolio-v2.netlify.app/img/cover-pic.jpg" />
-
-                <meta property="twitter:card" content="summary_large_image" />
-                <meta property="twitter:url" content="https://jaykay-portfolio-v2.netlify.app/" />
-                <meta property="twitter:title" content="Nature save worlds" />
-                <meta property="twitter:description"
-                    content="Nature is a British weekly scientific journal founded and based in London, England. As a multidisciplinary publication, Nature features peer-reviewed research from a variety of academic disciplines, mainly in science and technology." />
-                <meta property="twitter:image" content="https://jaykay-portfolio-v2.netlify.app/img/cover-pic.jpg" />
-
-            </Helmet>
+      
         <h2>About Page</h2>
     </div>
   )
